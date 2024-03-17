@@ -2,6 +2,13 @@
 
 <img src="https://img.shields.io/github/stars/amanbasu/wildfire-detection?color=0088ff"/> <img src="https://img.shields.io/github/forks/amanbasu/wildfire-detection?color=ff8800"/> <img src="https://img.shields.io/badge/torch-1.9.0+cu111-green?logo=pytorch"/> <img src="https://img.shields.io/badge/python-3.9.6-blue?logo=python"/>
 
+train.py 수행해주면 되고 train.py에 임포트 하는 곳 바로 밑에 BATCH_SIZE=8로 되어있는데 자기 컴퓨터에 맞게 고쳐주면 되고 
+
+ROOT_DATA_PATH도 자기 데이터 폴더 위치에 맞게 해주면 됩니다~ 
+
+가장 밑으로 내려서 ```python if__name__=="__main__": ``` 부분에 model 고르는 NAME이랑 loss function 정하는 criterion, 그리고 optimizer scheduler 있음 골라가면서 실험하면 됨
+
+
 In this project, we use the active fire dataset from https://github.com/pereira-gha/activefire ([data link](https://drive.google.com/drive/folders/1GIcAev09Ye4hXsSu0Cjo5a6BfL3DpSBm)) and try to improve over their results. We use two Vision Transformer networks: [Swin-Unet](https://github.com/HuCaoFighting/Swin-Unet) and [TransUnet](https://github.com/Beckschen/TransUNet), and one CNN-based UNet network. We show that ViT can outperform well-trained and specialized CNNs to detect wildfires on a previously published dataset of LandSat-8 imagery (Pereira et al.). One of our ViTs outperforms the baseline CNN comparison by 0.92%. However, we find our own implementation of CNN-based UNet to perform best in every category, showing their sustained utility in image tasks. Overall, ViTs are comparably capable in detecting wildfires as CNNs, though well-tuned CNNs are still the best technique for detecting wildfire with our UNet providing an IoU of 93.58%, better than the baseline UNet by some 4.58%. 
 
 ## File description
